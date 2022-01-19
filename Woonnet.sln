@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Woonnet", "Woonnet\Woonnet.csproj", "{BC566085-CBDD-4C1B-AA88-B309AE9A4389}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoonnetWeb", "WoonnetWeb\WoonnetWeb.csproj", "{B1467D07-6C1D-4834-A744-FCF0AF8B7254}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC566085-CBDD-4C1B-AA88-B309AE9A4389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC566085-CBDD-4C1B-AA88-B309AE9A4389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC566085-CBDD-4C1B-AA88-B309AE9A4389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC566085-CBDD-4C1B-AA88-B309AE9A4389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1467D07-6C1D-4834-A744-FCF0AF8B7254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1467D07-6C1D-4834-A744-FCF0AF8B7254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1467D07-6C1D-4834-A744-FCF0AF8B7254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1467D07-6C1D-4834-A744-FCF0AF8B7254}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE538CDE-58DF-4A61-A0D1-08E2804B29B8}
+	EndGlobalSection
+EndGlobal

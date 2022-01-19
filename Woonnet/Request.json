@@ -1,0 +1,46 @@
+﻿{
+  "woonwens": {
+    "Kenmerken": [
+      {
+        "waarde": "1",
+        "geenVoorkeur": false,
+        "kenmerkType": "24",
+        "name": "objecttype"
+      },
+      {
+        "waarde": "w:59914;w:59908;w:59905",
+        "geenVoorkeur": false,
+        "kenmerkType": "9",
+        "name": "locatie"
+      },
+      {
+        "waarde": "780;1040",
+        "geenVoorkeur": false,
+        "kenmerkType": "13",
+        "name": "prijshuur"
+      },
+      {
+        "waarde": "2",
+        "geenVoorkeur": false,
+        "kenmerkType": "7",
+        "name": "kansrijkzoeken"
+      },
+      {
+        "waarde": "0",
+        "geenVoorkeur": false,
+        "kenmerkType": "23",
+        "name": "zorgaanwezig"
+      },
+      {
+        "waarde": "1",
+        "geenVoorkeur": false,
+        "kenmerkType": "20",
+        "name": "verdeelmethode"
+      }
+    ],
+    "BerekendDatumTijd": "2022-01-19T16:18:41.385Z"
+  },
+  "paginaNummer": 1,
+  "paginaGrootte": 10000,
+  "filterMode": "AlleenActueel"
+}

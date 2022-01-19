@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>Load time: @Model.LoadTimeSec seconds</div>
+
+<div class="text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <!--
+
+                $"{aanbod.totalehuur} ({aanbod.aantalreacties} reactions since {aanbod.PublStartDateTime.ToString("dd-MM-yyyy HH:mm")}) - {aanbod.Url}
+
+                        -->
+                <th scope="col">Type</th>
+                <th scope="col">Adres</th>
+                <th scope="col">Totale huur</th>
+                <th scope="col">Reacties</th>
+                <th scope="col">Publicatie</th>
+                <th scope="col">Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var aanbod in Model.AanbodList)
+            {
+                <tr>
+                    <th scope="row">@aanbod.objecttype</th>
+                    <td>@aanbod.straat @aanbod.huisnummer @aanbod.huisnummertoevoeging @aanbod.huisletter @aanbod.plaats (@aanbod.wijk, @aanbod.buurt)</td>
+                    <td>@aanbod.totalehuur</td>
+                    <td>@aanbod.aantalreacties</td>
+                    <td>@aanbod.publstart</td>
+                    <td><a target="_blank" href="@aanbod.Url">link</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
