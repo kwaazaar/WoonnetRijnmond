@@ -26,6 +26,7 @@ namespace Woonnet.Models
         public string publstop { get; set; }
         public string minleeftijd { get; set; }
         public string maxleeftijd { get; set; }
+        public string criteriavoorrangsregels { get; set; }
         public string aantalreacties { get; set; }
 
         public DateTime PublStartDateTime
