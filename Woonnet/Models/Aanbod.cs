@@ -36,6 +36,20 @@ namespace Woonnet.Models
                 return DateTime.Parse(publstart);
             }
         }
+
+        public int? MinLeeftijdNumeric
+        {
+            get
+            {
+                if (int.TryParse(minleeftijd, out var value) && value != 0)
+                {
+                    return value;
+                }
+
+                return null;
+            }
+        }
+
         public int? AantalReactiesNumeric
         {
             get

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Concurrent;
 using System.Diagnostics;
+using System.Linq;
 using Woonnet;
 using Woonnet.Models;
 
@@ -20,12 +21,12 @@ namespace WoonnetWeb.Pages
             _houseFinder = houseFinder;
         }
 
-        public async Task OnGet(bool parallel = false)
+        public async Task OnGet(bool parallel = false, int age=52)
         {
-            await RefreshAanbodList(parallel);
+            await RefreshAanbodList(parallel, age);
         }
 
-        private async Task RefreshAanbodList(bool parallel)
+        private async Task RefreshAanbodList(bool parallel, int age)
         {
             var matches = (await _houseFinder.GetMatches()).ToList();
 
@@ -35,11 +36,15 @@ namespace WoonnetWeb.Pages
 
             if (parallel)
             {
-                matches.AsParallel().ForAll(async match =>
-                {
-                    var aanbod = await _houseFinder.GetDetails(match.FrontendAdvertentieId);
-                    aanbodList.Add(aanbod);
-                });
+                matches
+                    .AsParallel()
+                    .Select(async match => await _houseFinder.GetDetails(match.FrontendAdvertentieId))
+                    .ForAll(async ta =>
+                        {
+                            var a = await ta;
+                            aanbodList.Add(a);
+                        });
+
             }
             else
             {
@@ -56,6 +61,7 @@ namespace WoonnetWeb.Pages
             // todo: move filters up
             AanbodList = aanbodList
                 .Where(a => a.verdeelmodel == "DirectKans")
+                .Where(a => !a.MinLeeftijdNumeric.HasValue || a.MinLeeftijdNumeric.Value <= age)
                 //.Where(a => a.PublStartDateTime >= DateTime.Now.AddDays(-1))
                 .OrderByDescending(a => a.PublStartDateTime)
                 .ThenBy(a => a.AantalReactiesNumeric)
